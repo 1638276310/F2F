@@ -36,16 +36,16 @@ pip install -r requirements.txt
 ## 命令行使用 (CLI)
 ```bash
 # 编码文件
-python deepseek_f2b.py encode input_file -e base85 -z lzma -v 100 -p mypassword
+python F2F.py encode input_file -e base85 -z lzma -v 100 -p mypassword
 ```
 ```bash
 # 解码文件
-python deepseek_f2b.py decode encoded_file -o output_file -p mypassword
+python F2F.py decode encoded_file -o output_file -p mypassword
 ```
 
 ## 图形界面使用 (GUI)
 ```bash
-python deepseek_gui_full.py
+python F2F_GUI.py
 ```
 
 ## 命令行参数详解
@@ -105,19 +105,19 @@ graph TD
 
 ### 案例1：加密并压缩敏感文件
 ```bash
-python deepseek_f2b.py encode financial_report.xlsx -e base85 -z lzma -p s3cr3tP@ss
+python F2F.py encode financial_report.xlsx -e base85 -z lzma -p s3cr3tP@ss
 ```
 将生成高度压缩的加密base85文件，可安全通过邮件发送
 
 ### 案例2：分割大文件用于云存储
 ```bash
-python deepseek_f2b.py encode 4k_video.mp4 -v 100
+python F2F.py encode 4k_video.mp4 -v 100
 ```
 将生成多个100MB的分卷文件，便于上传到有大小限制的云存储
 
 ### 案例3：嵌入二进制资源到源代码
 ```bash
-python deepseek_f2b.py encode logo.png -e base64 > logo_base64.txt
+python F2F.py encode logo.png -e base64 > logo_base64.txt
 ```
 生成可直接嵌入HTML/CSS/JS的Base64编码
 
