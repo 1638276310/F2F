@@ -1,4 +1,4 @@
-# DeepSeek F2B 文件编码/解码工具
+# File2File 文件编码/解码工具
 
 ![Python](https://img.shields.io/badge/Python-3.8+-blue?logo=python)
 ![License](https://img.shields.io/badge/License-MIT-green)
