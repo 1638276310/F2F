@@ -5,7 +5,7 @@
 ![GUI](https://img.shields.io/badge/GUI-Tkinter-orange)
 ![Build](https://img.shields.io/badge/Build-Passing-brightgreen)
 
-DeepSeek F2B 是一个强大的文件编码/解码工具，支持多种编码格式、压缩算法、加密和分卷处理，专为处理大型文件而设计。
+File2File 是一个强大的文件编码/解码工具，支持多种编码格式、压缩算法、加密和分卷处理，专为处理大型文件而设计。
 
 ## 功能亮点 ✨
 

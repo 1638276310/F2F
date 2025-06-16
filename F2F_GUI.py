@@ -2,13 +2,13 @@ import os
 import threading
 import tkinter as tk
 from tkinter import ttk, filedialog, messagebox
-from deepseek_f2b import file_to_encoded, encoded_to_file
+from F2F import file_to_encoded, encoded_to_file
 import datetime
 
-class DeepseekGUI(tk.Tk):
+class F2F_GUI(tk.Tk):
     def __init__(self):
         super().__init__()
-        self.title("DeepSeek F2B 文件编码/解码工具")
+        self.title("F2F 文件编码/解码工具")
         self.geometry("750x600")
         self._create_widgets()
         self._load_defaults()
@@ -163,15 +163,15 @@ class DeepseekGUI(tk.Tk):
             "volume_size": self.volume_size.get(),
             "safe_mode": self.safe_mode.get(),
         }
-        with open("deepseek_config.json", "w", encoding="utf-8") as f:
+        with open("F2F_config.json", "w", encoding="utf-8") as f:
             json.dump(defaults, f)
         self._log("默认参数已保存")
 
     def _load_defaults(self):
         import json
         try:
-            if os.path.exists("deepseek_config.json"):
-                with open("deepseek_config.json", "r", encoding="utf-8") as f:
+            if os.path.exists("F2F_config.json"):
+                with open("F2F.json", "r", encoding="utf-8") as f:
                     defaults = json.load(f)
                     self.encoding.set(defaults.get("encoding", "base64"))
                     self.compression.set(defaults.get("compression", "none"))
@@ -213,5 +213,5 @@ class DeepseekGUI(tk.Tk):
                 os.startfile(folder)
 
 if __name__ == '__main__':
-    app = DeepseekGUI()
+    app = F2F_GUI()
     app.mainloop()
