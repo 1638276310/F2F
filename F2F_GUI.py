@@ -67,7 +67,6 @@ class F2F_GUI(tk.Tk):
         ttk.Button(frm_action, text="保存默认参数", command=self._save_defaults).pack(side="left", padx=10)
         ttk.Button(frm_action, text="清空日志", command=self._clear_log).pack(side="left", padx=10)
         ttk.Button(frm_action, text="导出日志", command=self._export_log).pack(side="left", padx=10)
-        ttk.Button(frm_action, text="打开目录", command=self._open_output_dir).pack(side="left", padx=10)
 
         self.progress_var = tk.DoubleVar()
         self.progress = ttk.Progressbar(self, variable=self.progress_var, maximum=100)
@@ -180,16 +179,6 @@ class F2F_GUI(tk.Tk):
         except Exception as e:
             self._log("读取默认参数失败: " + str(e))
 
-    # def _enable_drag_and_drop(self):
-    #     def drop(event):
-    #         self.file_path.set(event.data.strip("{}"))
-    #     try:
-    #         import tkinterdnd2 as tkdnd
-    #         self.tk.call('package', 'require', 'tkdnd')
-    #         self.drop_target_register(tkdnd.DND_FILES)
-    #         self.dnd_bind('<<Drop>>', drop)
-    #     except Exception as e:
-    #         self._log("拖拽功能初始化失败: " + str(e))
 
     def _clear_log(self):
         self.log_text.delete(1.0, tk.END)
@@ -205,12 +194,6 @@ class F2F_GUI(tk.Tk):
         except Exception as e:
             self._log("导出日志失败: " + str(e))
 
-    def _open_output_dir(self):
-        path = self.output_path.get()
-        if path:
-            folder = os.path.dirname(path)
-            if os.path.exists(folder):
-                os.startfile(folder)
 
 if __name__ == '__main__':
     app = F2F_GUI()
